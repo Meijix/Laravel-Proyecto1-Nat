@@ -7,6 +7,11 @@ Route::get('/', function () {
     return "Bienvenido a la página principal";
 });
 
+Route::get('avisos', function () {
+    //Mostrar vista aviso.blade.php
+    return view('aviso');
+});
+
 Route::get('cursos', function () {
     return "Bienvenido a la página de cursos";
 });
