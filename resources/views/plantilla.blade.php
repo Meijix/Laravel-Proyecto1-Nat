@@ -20,13 +20,17 @@
             <div class="navbar">
                 <ul class="mr-auto">
                     <li class="nav-item"><a  href="#!">Principal</a></li>
+                    <li class="nav-item"><a  href="#!">Agregar</a></li>
                 </ul>
             </div>
 
         </div>          
     </header>
+
     <!-- Contenido -->
-    @yield('contenido')
+@yield('contenido')
+
+
     <!-- Pie de página -->
     <footer>
         <div class="text-center p-3" >
