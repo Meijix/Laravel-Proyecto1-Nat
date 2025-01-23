@@ -4,7 +4,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return "Bienvenido a la página principal";
+    return view('principal');
 });
 
 Route::get('avisos', function () {
