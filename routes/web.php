@@ -2,6 +2,7 @@
 // Importa el orden de las rutas
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CursoController;
 
 Route::get('/', function () {
     return view('principal');
@@ -11,6 +12,8 @@ Route::get('avisos', function () {
     //Mostrar vista aviso.blade.php
     return view('aviso');
 });
+
+Route::get('/agregar', [CursoController::class, 'create'])->name('create');
 
 Route::get('cursos', function () {
     return "Bienvenido a la página de cursos";
