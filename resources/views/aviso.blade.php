@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Aviso</title>
-</head>
-<body>
+@extends('plantilla')
+
+@section('contenido')
+<!-- Contenido principal -->
+<section class="content">
+
     <h1>Aviso de curso de inducción</h1>
 
     <p>Se les convoca a asistir al curso de inducción, que se realizará durante la semana del  27 al 31 de enero de 2025 en el Auditorio Carlos Pérez del Toro a partir de las 9:00 am.</p>
@@ -25,5 +22,8 @@
         <p>Si les interesan otras conferencias ver el anuncio oficial. </p>
 
     @endif
-</body>
-</html>
+
+</section>
+@endsection
+
+
