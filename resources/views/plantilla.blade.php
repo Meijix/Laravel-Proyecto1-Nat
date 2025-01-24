@@ -19,8 +19,8 @@
             <!-- Menú -->       
             <div class="navbar">
                 <ul class="mr-auto">
-                    <li class="nav-item"><a  href="#!">Principal</a></li>
-                    <li class="nav-item"><a  href="#!">Agregar</a></li>
+                    <li class="nav-item"><a  href="{{ route('principal')}}">Principal</a></li>
+                    <li class="nav-item"><a  href="{{ route('create')}}">Agregar</a></li>
                 </ul>
             </div>
 
