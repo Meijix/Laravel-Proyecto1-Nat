@@ -28,7 +28,7 @@
     </header>
 
     <!-- Contenido -->
-@yield('contenido')
+    @yield('contenido')
 
 
     <!-- Pie de página -->

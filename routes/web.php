@@ -13,7 +13,7 @@ Route::get('avisos', function () {
     return view('aviso');
 });
 
-Route::get('/agregar', [CursoController::class, 'create'])->name('create');
+Route::get('/agregar', [CursoController::class, 'create']) -> name('create');
 
 Route::get('cursos', function () {
     return "Bienvenido a la página de cursos";
