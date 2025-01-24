@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Curso;
 
 class CursoController extends Controller
 {
@@ -27,7 +28,29 @@ class CursoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nombre' => 'required',
+            'objetivo' => 'required',
+            'modalidad' => 'required',
+            'cupo' => 'required',
+            'periodo' => 'required',
+            'horario' => 'required',
+            'dias' => 'required',
+            'salon' => 'required'
+        ]);
+        $curso = new Curso;
+
+        $curso->nombre = $request->nombre;
+        $curso->objetivo = $request->objetivo;
+        $curso->modalidad = $request->modalidad;
+        $curso->cupo = $request->cupo;
+        $curso->periodo = $request->periodo;
+        $curso->horario = $request->horario;
+        $curso->dias = $request->dias;
+        $curso->salon = $request->salon;
+        $curso->save();
+
+        return redirect()->route('principal')->with('mensaje', 'Curso agregado con éxito');
     }
 
     /**
