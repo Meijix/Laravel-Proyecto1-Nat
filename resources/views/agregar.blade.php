@@ -66,7 +66,7 @@
         </div>
 
         <!-- Submit button -->
-        <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Sign up</button>
+        <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Agregar curso</button>
     </form>
 
 </section>
