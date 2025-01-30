@@ -18,6 +18,8 @@ Route::post('/agregar', [CursoController::class, 'store']) -> name('store');
 Route::get('/editar/{id}', [CursoController::class, 'edit']) -> name('edit');
 //Para actualizar un curso
 Route::post('/actualizar/{id}', [CursoController::class, 'update']) -> name('update');
+//Para eliminar un curso
+Route::delete('/eliminar/{id}', [CursoController::class, 'destroy']) -> name('destroy');
 
 /*
 |--------------------------------------------------------------------------

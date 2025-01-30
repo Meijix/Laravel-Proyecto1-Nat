@@ -12,7 +12,7 @@ class CursoController extends Controller
      */
     public function index()
     {
-        $cursos = Curso::paginate(2);
+        $cursos = Curso::orderBy('id')-> paginate(2);
         return view('principal', compact('cursos'));
     }
 
@@ -107,6 +107,7 @@ class CursoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Curso::destroy($id);
+        return redirect(route('index'))->with('mensaje', 'El curso fue eliminado con éxito');
     }
 }

@@ -40,7 +40,15 @@
                 <td>{{$curso->horario}}</td>
                 <td>{{$curso->dias}}</td>
                 <td>{{$curso->salon}}</td>
-                <td> <a class="btn btn-raised btn-primary btn-sm" href="{{route('edit', $curso->id)}}">Editar</a>  </td>
+                <td> 
+                    <a class="btn btn-raised btn-primary btn-sm" href="{{route('edit', $curso->id)}}">Editar</a>  
+                    Eliminar
+                    <form action="{{route('destroy', $curso->id)}}" method=POST>
+                        @csrf
+                        {{method_field('delete')}}
+                        <button type="submit" class="btn btn-raised btn-danger btn-sm" onclick="returnconfirm('Quieres eliminar este curso?')">Eliminar</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
         </tbody>

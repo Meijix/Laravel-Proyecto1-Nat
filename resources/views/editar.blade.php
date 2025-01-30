@@ -6,7 +6,7 @@
     <h1>Editar Curso</h1>
  {{--    <p>Por favor, llena el siguiente formulario para agregar un nuevo curso:</p> --}}
     <!-- Formulario para agregar un curso -->
-    <form action="{{route('update', $curso->id)}}" method="POST">
+    <form action="{{route('update', $curso->id)}}" method=POST>
         @csrf
         <!-- 1 column -->
         <div data-mdb-input-init class="form-outline mb-4">
