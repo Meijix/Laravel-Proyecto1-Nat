@@ -3,6 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\MensajesController;
 
 Route::get('/', [CursoController::class,'index'])-> name('index');
 
@@ -21,6 +22,12 @@ Route::post('/actualizar/{id}', [CursoController::class, 'update']) -> name('upd
 //Para eliminar un curso
 Route::delete('/eliminar/{id}', [CursoController::class, 'destroy']) -> name('destroy');
 
+
+//Contacto
+Route::get('/contacto', function () {
+    return view('contacto');})->name('contacto');
+//Para enviar un correo
+Route::post('/contacto', [MensajesController::class, 'store']);
 /*
 |--------------------------------------------------------------------------
 | Web Routes

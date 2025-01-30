@@ -21,6 +21,7 @@
                 <ul class="mr-auto">
                     <li class="nav-item"><a  href="{{ route('index')}}">Principal</a></li>
                     <li class="nav-item"><a  href="{{ route('create')}}">Agregar</a></li>
+                    <li class="nav-item"><a  href="{{ route('contacto')}}">Contactanos</a></li>
                 </ul>
             </div>
 
