@@ -12,5 +12,36 @@
         </div>
     @endif
     
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Objetivo</th>
+                <th scope="col">Modalidad</th>
+                <th scope="col">Cupo</th>
+                <th scope="col">Periodo</th>
+                <th scope="col">Horario</th>
+                <th scope="col">Salon</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($cursos as $curso)
+            <tr>
+                <th scope="row">{{$curso->id}}</th>
+                <td>{{$curso->nombre}}</td>
+                <td>{{$curso->objetivo}}</td>
+                <td>{{$curso->modalidad}}</td>
+                <td>{{$curso->cupo}}</td>
+                <td>{{$curso->periodo}}</td>
+                <td>{{$curso->horario}}</td>
+                <td>{{$curso->dias}}</td>
+                <td>{{$curso->salon}}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+    {{$cursos->links('pagination::bootstrap-4')}}
+
 </section>
 @endsection

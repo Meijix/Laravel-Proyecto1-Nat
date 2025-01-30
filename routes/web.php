@@ -4,9 +4,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CursoController;
 
-Route::get('/', function () {
-    return view('principal');
-})-> name('principal');
+Route::get('/', [CursoController::class,'index'])-> name('index');
 
 Route::get('avisos', function () {
     //Mostrar vista aviso.blade.php

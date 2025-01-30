@@ -12,7 +12,8 @@ class CursoController extends Controller
      */
     public function index()
     {
-        //
+        $cursos = Curso::paginate(3);
+        return view('principal');
     }
 
     /**
@@ -48,9 +49,10 @@ class CursoController extends Controller
         $curso->horario = $request->horario;
         $curso->dias = $request->dias;
         $curso->salon = $request->salon;
+        
         $curso->save();
 
-        return redirect()->route('principal')->with('mensaje', 'Curso agregado con éxito');
+        return redirect()->route('index')->with('mensaje', 'Curso agregado con éxito');
     }
 
     /**
