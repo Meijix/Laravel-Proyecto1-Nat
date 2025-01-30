@@ -3,12 +3,13 @@
 @section('contenido')
 <!-- Contenido principal -->
 <section class="content">
-    <h1>Pagina Principal</h1>
+    <h1>Cursos</h1>
     <p>Esta es la página principal de la aplicación de cursos de la DGTIC.</p>
 
+{{-- no me sale la alerta de agregado y no se guarda en la base de datos --}}
     @if (session('mensaje'))
         <div class="alert alert-success" role="alert">
-            {{ session('mensaje') }}
+            {{ (session('mensaje')) }}
         </div>
     @endif
     
@@ -22,7 +23,9 @@
                 <th scope="col">Cupo</th>
                 <th scope="col">Periodo</th>
                 <th scope="col">Horario</th>
+                <th scope="col">Días</th>
                 <th scope="col">Salon</th>
+                <th scope="col">Opciones</th>
             </tr>
         </thead>
         <tbody>
@@ -37,6 +40,7 @@
                 <td>{{$curso->horario}}</td>
                 <td>{{$curso->dias}}</td>
                 <td>{{$curso->salon}}</td>
+                <td> <a class="btn btn-raised btn-primary btn-sm" href="{{route('edit', $curso->id)}}">Editar</a>  </td>
             </tr>
             @endforeach
         </tbody>

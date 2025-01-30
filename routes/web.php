@@ -7,29 +7,17 @@ use App\Http\Controllers\CursoController;
 Route::get('/', [CursoController::class,'index'])-> name('index');
 
 Route::get('avisos', function () {
-    //Mostrar vista aviso.blade.php
     return view('aviso');
 });
-
+//Para mostrar formulario de agregar un curso
 Route::get('/agregar', [CursoController::class, 'create']) -> name('create');
-
+//Para guardar un curso
 Route::post('/agregar', [CursoController::class, 'store']) -> name('store');
 
-Route::get('cursos', function () {
-    return "Bienvenido a la página de cursos";
-});
-
-Route::get('sesiones/{sesion}', function ($sesion) {
-    return "Ingresaste a la sesión numero:  $sesion";
-});
-
-Route::get('alumnos/{carrera}/{asignatura}', function ($carrera, $asignatura=null) {
-    if($asignatura){
-        return "Bienvenido a la carrera: $carrera, asignatura: $asignatura";
-    }else{
-        return "Bienvenido a la carrera: $carrera";
-    }
-});
+//Para editar un curso
+Route::get('/editar/{id}', [CursoController::class, 'edit']) -> name('edit');
+//Para actualizar un curso
+Route::post('/actualizar/{id}', [CursoController::class, 'update']) -> name('update');
 
 /*
 |--------------------------------------------------------------------------
