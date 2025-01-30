@@ -4,7 +4,7 @@
 <!-- Contenido principal -->
 <section class="content">
     <h1>Agregar Nuevo Curso</h1>
-    <p>Por favor, llena el siguiente formulario para agregar un nuevo curso:</p>
+ {{--    <p>Por favor, llena el siguiente formulario para agregar un nuevo curso:</p> --}}
     <!-- Formulario para agregar un curso -->
     <form action="{{route('store')}}" method="POST">
         @csrf

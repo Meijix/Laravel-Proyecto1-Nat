@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Curso;
 
 class CursoController extends Controller
 {
@@ -11,7 +12,8 @@ class CursoController extends Controller
      */
     public function index()
     {
-        //
+        $cursos = Curso::paginate(3);
+        return view('principal', compact('cursos'));
     }
 
     /**
@@ -27,7 +29,24 @@ class CursoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nombre' => 'required',
+            'objetivo' => 'required',
+            'modalidad' => 'required',
+            'cupo' => 'required',
+            'periodo' => 'required',
+            'horario' => 'required',
+            'dias' => 'required',
+            'salon' => 'required'
+        ]);
+
+        $curso = new Curso;
+        $curso->nombre = $request->nombre;
+        $curso->descripcion = $request->descripcion;
+        $curso->categoria = $request->categoria;
+        $curso->save();
+
+        return redirect()->route('index')->with('mensaje', 'El curso fue agregado con éxito');
     }
 
     /**
