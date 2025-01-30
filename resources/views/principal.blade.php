@@ -42,7 +42,7 @@
                 <td>{{$curso->salon}}</td>
                 <td> 
                     <a class="btn btn-raised btn-primary btn-sm" href="{{route('edit', $curso->id)}}">Editar</a>  
-                    Eliminar
+                    
                     <form action="{{route('destroy', $curso->id)}}" method=POST>
                         @csrf
                         {{method_field('delete')}}
