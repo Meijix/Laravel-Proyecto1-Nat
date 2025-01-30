@@ -42,11 +42,16 @@ class CursoController extends Controller
 
         $curso = new Curso;
         $curso->nombre = $request->nombre;
-        $curso->descripcion = $request->descripcion;
-        $curso->categoria = $request->categoria;
+        $curso->objetivo = $request->objetivo;
+        $curso->modalidad = $request->modalidad;
+        $curso->cupo = $request->cupo;
+        $curso->periodo = $request->periodo;
+        $curso->horario = $request->horario;
+        $curso->dias = $request->dias;
+        $curso->salon = $request->salon;
         $curso->save();
 
-        return redirect()->route('index')->with('mensaje', 'El curso fue agregado con éxito');
+        return redirect(route('index'))->with('mensaje', 'El curso fue agregado con éxito');
     }
 
     /**
@@ -62,7 +67,8 @@ class CursoController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $curso = Curso::find($id);
+        return view('editar', compact('curso'));        
     }
 
     /**
@@ -70,8 +76,31 @@ class CursoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $this->validate($request, [
+            'nombre' => 'required',
+            'objetivo' => 'required',
+            'modalidad' => 'required',
+            'cupo' => 'required',
+            'periodo' => 'required',
+            'horario' => 'required',
+            'dias' => 'required',
+            'salon' => 'required'
+        ]);
+
+        $curso = Curso::find($id);
+        $curso->nombre = $request->nombre;
+        $curso->objetivo = $request->objetivo;
+        $curso->modalidad = $request->modalidad;
+        $curso->cupo = $request->cupo;
+        $curso->periodo = $request->periodo;
+        $curso->horario = $request->horario;
+        $curso->dias = $request->dias;
+        $curso->salon = $request->salon;
+        $curso->save();
+
+        return redirect(route('index'))->with('mensaje', 'El curso fue actualizado con éxito');
     }
+
 
     /**
      * Remove the specified resource from storage.
